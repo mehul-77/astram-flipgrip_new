@@ -1,0 +1,23 @@
+{
+  "best_model": "RandomForest",
+  "comparison": {
+    "RandomForest": {
+      "mae": 43.713,
+      "rmse": 98.2201,
+      "r2": 0.2485
+    },
+    "XGBoost": {
+      "mae": 45.315,
+      "rmse": 103.3269,
+      "r2": 0.1684
+    },
+    "LightGBM": {
+      "mae": 48.8415,
+      "rmse": 99.8792,
+      "r2": 0.2229
+    }
+  },
+  "train_size": 2680,
+  "test_size": 671,
+  "feature_count": 68
+}
