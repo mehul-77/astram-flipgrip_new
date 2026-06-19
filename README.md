@@ -16,21 +16,21 @@ An AI-powered traffic incident prediction, impact analysis, and deployment recom
 
 ---
 
-## 🌟 Overview
+## Overview
 
 **ASTRAM** bridges the gap between reactive traffic management and proactive incident mitigation. By leveraging machine learning models trained on historical event data, ASTRAM predicts the duration and impact of traffic incidents, recommends optimal deployment strategies, and provides deep analytics into traffic patterns.
 
-### ✨ Key Features
-- 🔮 **Incident Prediction**: Predict duration, impact score, and severity of live traffic incidents.
-- 🧬 **Event DNA**: Find and analyze similar historical incidents using KNN similarity matching to understand past resolution strategies.
-- 📊 **Rich Analytics**: Comprehensive dashboards displaying corridor risk, junction risk, hourly distributions, and cascade events.
-- 🧠 **Explainable AI (XAI)**: SHAP integration to provide transparency into *why* the model made a specific prediction.
-- 👮 **Actionable Recommendations**: Automated deployment recommendations for traffic personnel based on incident severity and zone.
-- 📡 **Real-time Drift Monitoring**: Tracks prediction drift and dynamically flags when models require retraining.
+### Key Features
+-  **Incident Prediction**: Predict duration, impact score, and severity of live traffic incidents.
+-  **Event DNA**: Find and analyze similar historical incidents using KNN similarity matching to understand past resolution strategies.
+-  **Rich Analytics**: Comprehensive dashboards displaying corridor risk, junction risk, hourly distributions, and cascade events.
+-  **Explainable AI (XAI)**: SHAP integration to provide transparency into *why* the model made a specific prediction.
+-  **Actionable Recommendations**: Automated deployment recommendations for traffic personnel based on incident severity and zone.
+-  **Real-time Drift Monitoring**: Tracks prediction drift and dynamically flags when models require retraining.
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ASTRAM is composed of a decoupled modern stack: a React/Vite frontend and a high-performance FastAPI/Python backend.
 
@@ -59,7 +59,7 @@ graph TD
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ```text
 Astram-Flipgrid/
@@ -82,11 +82,11 @@ Astram-Flipgrid/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 Follow these steps to run the application locally.
 
-### 1️⃣ Starting the Backend
+### 1. Starting the Backend
 The backend runs on Python 3.11+ and uses FastAPI.
 
 ```bash
@@ -106,7 +106,7 @@ uvicorn main:app --reload --port 8000
 ```
 > **Note:** The API docs will be available at [http://localhost:8000/docs](http://localhost:8000/docs).
 
-### 2️⃣ Starting the Frontend
+### 2️. Starting the Frontend
 The frontend uses Node.js, Vite, React 19, and Tailwind CSS 4.
 
 ```bash
@@ -122,7 +122,7 @@ npm run dev
 
 ---
 
-## 🧠 Machine Learning Engine
+## Machine Learning Engine
 ASTRAM's prediction core utilizes advanced ML techniques:
 - **Algorithms:** Evaluates RandomForest, XGBoost, and LightGBM to select the most performant model.
 - **Features Engineered:** Temporal (hour, day, weekend flags), Categorical (event_cause, corridor, zone), and Binary markers (road_closure, breakdown_reason).
@@ -130,7 +130,7 @@ ASTRAM's prediction core utilizes advanced ML techniques:
 
 ---
 
-## 📜 License
+##  License
 
 Built for the ASTRAM hackathon. 
 Released under the **MIT License**.
