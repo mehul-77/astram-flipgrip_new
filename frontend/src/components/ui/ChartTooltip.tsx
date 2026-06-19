@@ -18,7 +18,7 @@ export default function ChartTooltip({ active, payload, label, formatter }: Char
           <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: p.color }} />
           <span className="text-zinc-500">{p.name}</span>
           <span className="ml-auto font-mono font-semibold text-zinc-200">
-            {formatter ? formatter(p.value) : p.value.toLocaleString()}
+            {formatter ? formatter(p.value) : p.value?.toLocaleString()}
           </span>
         </div>
       ))}

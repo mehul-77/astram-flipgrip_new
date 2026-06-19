@@ -100,7 +100,7 @@ const CardNav: React.FC<CardNavProps> = ({
         return topBar + contentHeight + padding;
       }
     }
-    return 280;
+    return 380;
   };
 
   const createTimeline = () => {

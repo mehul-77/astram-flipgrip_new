@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Activity, Map, ShieldAlert, Fingerprint, ActivitySquare, Menu, X } from 'lucide-react';
+import { Activity, Map, ShieldAlert, Fingerprint, ActivitySquare, Menu, X, Layers, AlertOctagon, Scale, Moon, AlertTriangle } from 'lucide-react';
 
 const navItems = [
   { name: 'Analytics Command', path: '/analytics', icon: Activity },
@@ -8,6 +8,11 @@ const navItems = [
   { name: 'Resource Recommender', path: '/recommender', icon: ShieldAlert },
   { name: 'Event DNA Matcher', path: '/dna', icon: Fingerprint },
   { name: 'Drift Monitor', path: '/drift', icon: ActivitySquare },
+  { name: 'Zone Stress', path: '/stress', icon: Layers },
+  { name: 'Chronic Problems', path: '/chronic', icon: AlertOctagon },
+  { name: 'Workload Balancer', path: '/workload', icon: Scale },
+  { name: 'Night Intelligence', path: '/nightshift', icon: Moon },
+  { name: 'Precursor Warnings', path: '/precursor', icon: AlertTriangle },
 ];
 
 function NavItems({ onNavigate }: { onNavigate?: () => void }) {

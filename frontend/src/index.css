@@ -41,6 +41,7 @@ body {
   font-size: 14px;
   line-height: 1.5;
   letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -112,33 +113,48 @@ body {
    ═══════════════════════════════════════════════════════════════ */
 
 .surface {
-  background: #111113;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
+  background: rgba(17, 17, 19, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
 }
 
 .surface-elevated {
-  background: #18181b;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  background: rgba(24, 24, 27, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 48px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
 }
 
 .surface-accent {
-  background: rgba(245, 158, 11, 0.06);
-  border: 1px solid rgba(245, 158, 11, 0.15);
-  border-radius: 8px;
+  background: rgba(245, 158, 11, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.1);
+  box-shadow: 0 8px 32px -8px rgba(245, 158, 11, 0.05), inset 0 1px 0 rgba(245, 158, 11, 0.08);
+  border-radius: 16px;
 }
 
 .surface-danger {
-  background: rgba(239, 68, 68, 0.06);
-  border: 1px solid rgba(239, 68, 68, 0.15);
-  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(239, 68, 68, 0.1);
+  box-shadow: 0 8px 32px -8px rgba(239, 68, 68, 0.05), inset 0 1px 0 rgba(239, 68, 68, 0.08);
+  border-radius: 16px;
 }
 
 .surface-success {
-  background: rgba(34, 197, 94, 0.06);
-  border: 1px solid rgba(34, 197, 94, 0.15);
-  border-radius: 8px;
+  background: rgba(34, 197, 94, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(34, 197, 94, 0.1);
+  box-shadow: 0 8px 32px -8px rgba(34, 197, 94, 0.05), inset 0 1px 0 rgba(34, 197, 94, 0.08);
+  border-radius: 16px;
 }
 
 /* Backward compat: keep glass-panel working during migration */
@@ -246,9 +262,12 @@ body {
    Dot Grid Background
    ═══════════════════════════════════════════════════════════════ */
 
-.bg-dots {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 24px 24px;
+.bg-app-dark {
+  background-color: #09090b;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(245, 158, 11, 0.04), transparent),
+    radial-gradient(ellipse 60% 60% at 100% 100%, rgba(99, 102, 241, 0.03), transparent);
+  background-attachment: fixed;
 }
 
 /* ═══════════════════════════════════════════════════════════════

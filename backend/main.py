@@ -23,7 +23,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routers import analytics, dna, feedback, predict, recommend
+from routers import analytics, dna, feedback, predict, recommend, stress, chronic, workload, nightshift, precursor
 from schemas.responses import HealthResponse
 from utils.loader import is_model_loaded, preload
 
@@ -85,6 +85,11 @@ app.include_router(recommend.router)
 app.include_router(dna.router)
 app.include_router(analytics.router)
 app.include_router(feedback.router)
+app.include_router(stress.router, prefix="/api")
+app.include_router(chronic.router, prefix="/api")
+app.include_router(workload.router, prefix="/api")
+app.include_router(nightshift.router, prefix="/api")
+app.include_router(precursor.router, prefix="/api")
 
 
 # ── Health Check ─────────────────────────────────────────────────
