@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="frontend/public/vite.svg" alt="ASTRAM Logo" width="100"/>
   <h1>ASTRAM</h1>
   <p><strong>Adaptive Street Traffic Risk & Action Monitor</strong></p>
   <p>An advanced, AI-driven, full-stack intelligence platform designed for the Bengaluru Traffic Police to monitor, predict, and mitigate traffic disruptions in real-time.</p>
@@ -15,89 +14,88 @@
 
 <br/>
 
-## Overview
+## 🌟 Overview
 
-**ASTRAM** bridges the gap between reactive traffic management and proactive incident mitigation. By leveraging machine learning models trained on historical event data, ASTRAM predicts the duration and impact of traffic incidents, recommends optimal deployment strategies, and provides deep analytics into traffic patterns.
+**ASTRAM** takes raw traffic event data and transforms it into actionable, predictive intelligence. Instead of just reacting to traffic jams and accidents, ASTRAM allows dispatchers to *anticipate* cascading failures, rebalance officer workloads before police stations become overwhelmed, and identify historical "Event DNA" to deploy proven resolution strategies.
 
-### ✨ Key Features
-- 🔮 **Incident Prediction**: Predict duration, impact score, and severity of live traffic incidents.
-- 🧬 **Event DNA**: Find and analyze similar historical incidents using KNN similarity matching to understand past resolution strategies.
-- 📊 **Rich Analytics**: Comprehensive dashboards displaying corridor risk, junction risk, hourly distributions, and cascade events.
-- 🧠 **Explainable AI (XAI)**: SHAP integration to provide transparency into *why* the model made a specific prediction.
-- 👮 **Actionable Recommendations**: Automated deployment recommendations for traffic personnel based on incident severity and zone.
-- 📡 **Real-time Drift Monitoring**: Tracks prediction drift and dynamically flags when models require retraining.
+The entire application is wrapped in a bespoke, premium dark-mode interface powered by **React** and **Framer Motion**, delivering a highly fluid, cinematic data-exploration experience.
 
 ---
 
-## 🏗️ System Architecture
+## 🚀 Core Intelligence Modules
 
-ASTRAM is composed of a decoupled modern stack: a React/Vite frontend and a high-performance FastAPI/Python backend.
+ASTRAM offers a comprehensive suite of **10 specialized intelligence dashboards**:
 
-```mermaid
-graph TD
-    subgraph Frontend [Frontend: React + Vite + Tailwind]
-        UI[User Interface]
-        Maps[Leaflet Maps Integration]
-        Charts[Recharts Analytics]
-        UI --> Maps
-        UI --> Charts
-    end
+### 1. 📊 Traffic Intelligence Dashboard (Analytics)
+The central command center. Offers high-level operational metrics, real-time active incident counts, historical trend charts, and response time breakdowns to give dispatchers an immediate pulse of the city.
 
-    subgraph Backend [Backend: FastAPI + Python]
-        API[FastAPI REST Interface]
-        ML[ML Engine: XGBoost/RF]
-        SHAP[SHAP Explainer]
-        KNN[KNN Event DNA]
-        API --> ML
-        API --> SHAP
-        API --> KNN
-    end
+### 2. 🗺️ Live Incident Simulation
+An interactive geospatial map that visualizes the cascading ripple effect of a severe traffic incident on surrounding road networks, helping police block off the correct arterial roads before gridlock spreads.
 
-    UI <-->|JSON via REST API| API
-```
+### 3. 🔮 Impact Prediction & Recommender Engine
+Uses a trained Random Forest machine learning pipeline to predict the exact duration of a new disruption, how severely it will impact traffic, and whether it will require road closures. It instantly recommends specific unit deployments.
 
----
+### 4. 🧬 Event DNA Matcher
+Algorithms map the "genetic sequence" of a live incident (location + time + cause) against historical databases. It instantly retrieves mathematically similar past incidents to show how long they took to resolve and what strategies worked best.
 
-## 📂 Repository Structure
+### 5. 📉 AI Concept Drift Monitor
+Machine learning models degrade as city traffic patterns change over time. This dashboard continuously tracks ML model accuracy, prediction errors, and data drift, ensuring the AI remains highly reliable month over month.
 
-```text
-Astram-Flipgrid/
-├── backend/                  # FastAPI & Machine Learning Backend
-│   ├── data/                 # Raw event dataset (8,173 records)
-│   ├── ml/                   # ML pipeline (training, features, SHAP, KNN)
-│   ├── models/               # Trained model artifacts
-│   ├── routers/              # API endpoints (/predict, /recommend, etc.)
-│   └── ...                   # Python scripts & config files
-│
-├── frontend/                 # React UI Application
-│   ├── src/
-│   │   ├── components/       # Reusable UI components
-│   │   ├── pages/            # Views (EventDNA, Analytics, etc.)
-│   │   └── ...
-│   └── ...                   # Vite & Tailwind configuration files
-│
-└── README.md                 # You are here!
-```
+### 6. 🌡️ Zone Stress Analytics
+A high-level, premium bento-grid dashboard measuring the aggregated "Stress Score" of entire city zones, tracking peak simultaneous incidents, and identifying specific zones that need immediate pre-deployment of officers.
+
+### 7. ⚠️ Precursor Warning System (Cascading Risk)
+Detects subtle "trigger" events (like a localized waterlogging report or a minor vehicle breakdown) and predicts the exact probability of it cascading into a major compounding gridlock on critical corridors (like the Outer Ring Road).
+
+### 8. 🔄 Chronic Problem Detection
+Isolates systemic, recurring infrastructural failures (like repeating signal failures or persistent VIP movement bottlenecks in the exact same location) and calculates the devastating amount of man-hours being wasted on them.
+
+### 9. ⚖️ Workload Balancer
+Tracks the real-time fatigue and active incident load of every police station in the city. The system automatically recommends precise unit transfers (e.g., "Move 2 units from *Devanahalli* to *HAL Airport*") to prevent any single station from becoming critically overwhelmed.
+
+### 10. 🌙 Night Shift Operations
+A specialized view isolating 9 PM - 6 AM data. It visualizes the unique 24-hour velocity trends of nighttime driving and calculates the exact overnight officer placements required to handle speeding or late-night cargo accidents.
 
 ---
 
-## 🚀 Getting Started
+## 💻 Tech Stack & Architecture
 
-Follow these steps to run the application locally.
+### **Frontend (The Interface)**
+* **Framework:** React 18 + Vite (TypeScript)
+* **Styling:** Tailwind CSS (Custom App-Dark Theme)
+* **Animation:** Framer Motion (Spring-physics layout transitions, dynamic hover spotlights)
+* **Data Visualization:** Recharts (Bespoke customized charts with dynamic tooltips)
+* **Icons:** Lucide React
 
-### 1️⃣ Starting the Backend
-The backend runs on Python 3.11+ and uses FastAPI.
+### **Backend (The Brain)**
+* **Framework:** FastAPI (Python)
+* **Data Processing:** Pandas & Scikit-Learn
+* **Machine Learning:** Pre-trained Random Forest Classifier
+* **Dataset:** 40,000+ historical Bengaluru traffic records (`ASTRAM_event_data.csv`)
+
+---
+
+## 🛠️ Installation & Setup
+
+### Prerequisites
+- Node.js (v18+)
+- Python (3.9+)
+
+### 1. Start the Backend API
+The backend requires the `ASTRAM_event_data.csv` dataset and the pre-trained ML models.
 
 ```bash
 cd backend
+# Optional: Create a virtual environment
+# python -m venv venv
+# source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
 ```
 *The API will be live at `http://localhost:8000`*
 
-### 2️⃣ Starting the Frontend
-The frontend uses Node.js, Vite, React 19, and Tailwind CSS 4.
-
+### 2. Start the Frontend Dashboard
 ```bash
 cd frontend
 npm install
@@ -107,15 +105,16 @@ npm run dev
 
 ---
 
-## 🧠 Machine Learning Engine
-ASTRAM's prediction core utilizes advanced ML techniques:
-- **Algorithms:** Evaluates RandomForest, XGBoost, and LightGBM to select the most performant model.
-- **Features Engineered:** Temporal (hour, day, weekend flags), Categorical (event_cause, corridor, zone), and Binary markers (road_closure, breakdown_reason).
-- **Impact Scoring:** Custom weighted formula factoring in duration, closures, priority, and planning.
+## 🎨 Design Philosophy
+
+The ASTRAM frontend was meticulously engineered to feel less like a standard admin panel and more like a high-end, cinematic command center:
+- **Spotlight Hover Effects:** Cards feature interactive, mouse-tracking radial gradients that illuminate as you explore data.
+- **Spring-Loaded Typography:** Numbers and charts don't just update instantly; they tick and bounce using Framer Motion spring physics.
+- **Deep UI Depth:** Layered surfaces with heavy backdrop-blurs, ultra-thin borders, and deep shadows provide immense visual hierarchy.
+- **Data Density without Clutter:** Every chart, badge, and Bento-grid layout has been hand-coded for perfect editorial-quality typography.
 
 ---
 
-## 📜 License
-
-Built for the ASTRAM hackathon. 
-Released under the **MIT License**.
+<div align="center">
+  <p><i>Built for the Bengaluru Traffic Police Hackathon</i></p>
+</div>
