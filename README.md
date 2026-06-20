@@ -116,5 +116,5 @@ The ASTRAM frontend was meticulously engineered to feel less like a standard adm
 ---
 
 <div align="center">
-  <p><i>Built for the Bengaluru Traffic Police Hackathon</i></p>
+  <p><i>Built for the GridLock Hackathon 2.0 </i></p>
 </div>
