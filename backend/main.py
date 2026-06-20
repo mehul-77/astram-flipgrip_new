@@ -17,8 +17,12 @@ Endpoints:
 
 from __future__ import annotations
 
+import os
 import logging
 from contextlib import asynccontextmanager
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -67,7 +71,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",         # Next.js dev
+        os.getenv("FRONTEND_URL", "http://localhost:3000"),
         "http://localhost:3001",
         "https://*.vercel.app",          # Vercel deployments
         "*",                             # Allow all during hackathon
