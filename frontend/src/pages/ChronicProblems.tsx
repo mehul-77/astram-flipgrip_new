@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE } from '../lib/api';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, RefreshCw } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Cell } from 'recharts';
@@ -38,7 +39,7 @@ export default function ChronicProblems() {
   const fetchProblems = async () => {
     try {
       setLoading(true);
-      const res = await axios.get('http://localhost:8000/api/chronic/problems');
+      const res = await axios.get(`${API_BASE}/api/chronic/problems`);
       setProblems(res.data);
     } catch (err: any) {
       setError(err.message || 'Failed to load chronic problems');
@@ -58,7 +59,7 @@ export default function ChronicProblems() {
     
     setExpandedRow(rowId);
     try {
-      const res = await axios.get(`http://localhost:8000/api/chronic/trend?corridor=${encodeURIComponent(problem.corridor)}&event_cause=${encodeURIComponent(problem.event_cause)}`);
+      const res = await axios.get(`${API_BASE}/api/chronic/trend?corridor=${encodeURIComponent(problem.corridor)}&event_cause=${encodeURIComponent(problem.event_cause)}`);
       setTrendData(res.data);
     } catch (err) {
       console.error("Failed to load trend", err);

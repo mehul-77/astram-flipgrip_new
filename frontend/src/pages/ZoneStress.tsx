@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE } from '../lib/api';
 import { motion } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, LineChart, Line, CartesianGrid } from 'recharts';
 import { RefreshCw } from 'lucide-react';
@@ -37,7 +38,7 @@ export default function ZoneStress() {
   const fetchZoneStats = async () => {
     try {
       setLoading(true);
-      const res = await axios.get('http://localhost:8000/api/stress/zones');
+      const res = await axios.get(`${API_BASE}/api/stress/zones`);
       setZoneStats(res.data);
       if (res.data.length > 0 && !selectedZone) {
         setSelectedZone(res.data[0].zone);
@@ -51,7 +52,7 @@ export default function ZoneStress() {
 
   const fetchTimeline = async (zone: string) => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/stress/timeline?zone=${encodeURIComponent(zone)}`);
+      const res = await axios.get(`${API_BASE}/api/stress/timeline?zone=${encodeURIComponent(zone)}`);
       setTimeline(res.data);
     } catch (err: any) {
       console.error('Failed to load timeline', err);

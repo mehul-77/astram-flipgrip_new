@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE } from '../lib/api';
 import { motion } from 'framer-motion';
 import { RefreshCw } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, CartesianGrid } from 'recharts';
@@ -40,8 +41,8 @@ export default function WorkloadBalancer() {
     try {
       setLoading(true);
       const [stRes, recRes] = await Promise.all([
-        axios.get('http://localhost:8000/api/workload/stations'),
-        axios.get('http://localhost:8000/api/workload/recommendation')
+        axios.get(`${API_BASE}/api/workload/stations`),
+        axios.get(`${API_BASE}/api/workload/recommendation`)
       ]);
       setStations(stRes.data);
       setRecommendations(recRes.data);

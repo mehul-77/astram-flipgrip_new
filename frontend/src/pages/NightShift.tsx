@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE } from '../lib/api';
 import { motion } from 'framer-motion';
 import { RefreshCw } from 'lucide-react';
 import { ComposedChart, Bar, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceArea, CartesianGrid, Cell } from 'recharts';
@@ -46,8 +47,8 @@ export default function NightShift() {
     try {
       setLoading(true);
       const [overviewRes, corridorsRes] = await Promise.all([
-        axios.get('http://localhost:8000/api/nightshift/overview'),
-        axios.get('http://localhost:8000/api/nightshift/corridors')
+        axios.get(`${API_BASE}/api/nightshift/overview`),
+        axios.get(`${API_BASE}/api/nightshift/corridors`)
       ]);
       setHourlyData(overviewRes.data.hourly);
       setSummary(overviewRes.data.summary);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE } from '../lib/api';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RefreshCw, ArrowRight } from 'lucide-react';
 import StatusBadge from '../components/ui/StatusBadge';
@@ -45,7 +46,7 @@ export default function PrecursorWarning() {
   const fetchMap = async () => {
     try {
       setLoadingMap(true);
-      const res = await axios.get('http://localhost:8000/api/precursor/map');
+      const res = await axios.get(`${API_BASE}/api/precursor/map`);
       setMapData(res.data);
     } catch (err) {
       console.error(err);
@@ -59,7 +60,7 @@ export default function PrecursorWarning() {
   const handleCheck = async () => {
     try {
       setChecking(true);
-      const res = await axios.post('http://localhost:8000/api/precursor/check', {
+      const res = await axios.post(`${API_BASE}/api/precursor/check`, {
         event_cause: eventCause,
         corridor: corridor
       });
