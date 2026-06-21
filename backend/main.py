@@ -104,6 +104,13 @@ app.include_router(precursor.router, prefix="/api")
     tags=["System"],
     summary="Health check",
 )
+
+async def health() -> HealthResponse:
+    return HealthResponse(
+        status="ok",
+        model_loaded=is_model_loaded(),
+        version="1.0.0",
+    )
 # ── Root Path for UptimeRobot Ping ───────────────────────────────
 
 @app.api_route("/", methods=["GET", "HEAD"], tags=["System"])
@@ -113,9 +120,3 @@ async def root():
         "service": "ASTRAM Backend Core",
         "note": "Keeping Render awake!"
     }
-async def health() -> HealthResponse:
-    return HealthResponse(
-        status="ok",
-        model_loaded=is_model_loaded(),
-        version="1.0.0",
-    )
