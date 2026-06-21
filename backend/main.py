@@ -106,7 +106,7 @@ app.include_router(precursor.router, prefix="/api")
 )
 # ── Root Path for UptimeRobot Ping ───────────────────────────────
 
-@app.route("/", methods=["GET", "HEAD"], tags=["System"])
+@app.api_route("/", methods=["GET", "HEAD"], tags=["System"])
 async def root():
     return {
         "status": "healthy",
