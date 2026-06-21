@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const API_BASE = (import.meta as any).env?.VITE_API_URL || 'http://localhost:8000';
+export const API_BASE = 'https://astram-flipgrip-new.onrender.com';
 
 // ── Types ──────────────────────────────────────────────────────────────────
 
